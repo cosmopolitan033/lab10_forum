@@ -1,0 +1,12 @@
+image: node:18-bullseye-slim
+
+stages:
+  - pipeline
+
+pipeline:
+  stage: pipeline
+  script:
+    - npm install
+    - npm test
+  only:
+    - master
