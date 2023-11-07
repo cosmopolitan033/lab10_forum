@@ -8,7 +8,7 @@ Week 10 Tuesday 5:00pm [Sydney Local Time](https://www.timeanddate.com/worldcloc
 
 # Note
 
-1. We'll be using a new [`lab09_forum`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=COMP1531/23T3/students/_/lab09_forum) repository to demonstrate deployment. This is simply a stripped down solution for `lab05_forum` that allows us to assess a very basic implementation of the following routes:
+1. We'll be using a new [`lab09_forum`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=COMP1531/23T3/students/_/lab09_forum) repository to demonstrate deployment. This is simply a stripped down solution for `lab05_forum` with persistence, that allows us to assess a very basic implementation of the following routes:
     - root (`/`), 
     - echo (`/echo/echo`), 
     - post create (`/post/create`), 
@@ -93,12 +93,16 @@ $ git push deploy
 ```
 After running the command, your GitHub repository should then be populated with the code from your backend.
 
+Getting a "`git@github.com: Permission denied (publickey)` or similar access rights error? You'll need to add your SSH-Key to Github! Just like we did for Gitlab in [`lab01_git`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=COMP1531/23T3/students/_/lab01_git#adding-your-ed25519-ssh-key-to-gitlab). See instructions below, and then attempt to push again. 
+- Generate a new SSH Key (optional): https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+- Add SSH key to Github: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
 **NOTE**: To update your Github repository, run `git push deploy` after changes have been committed.
 
 ## 2. Deploy Server using Vercel
 *[Vercel](https://en.wikipedia.org/wiki/Vercel) is a cloud platform as a service company. Vercel architecture is built around [composability](https://en.wikipedia.org/wiki/Composability).*
 
-1. In your lab repo, install the [vercel](https://www.npmjs.com/package/vercel) package
+1. In your `lab09_forum` repo, install the [vercel](https://www.npmjs.com/package/vercel) package
     ```shell
     $ npm install vercel
     ```
@@ -193,7 +197,7 @@ After running the command, your GitHub repository should then be populated with 
 
     Why is this the case? Well Vercel is a [serverless](https://vercel.com/docs/functions/serverless-functions) deployment option that will only respond when a request is made. Any state variables, including local files e.g. `database.json`, will not be preserved. This means that if we'd implemented persistence - we'd lose it! What's a more robust solution? Instead of reading and writing to a file in our folder, let's read and write our data from an online database.
 
-## 3. Set up a Database
+## 3. Setup Deployed Database
 1. On your deployment page, navigate to the `Storage` tab.
     <details close>
     <summary>Top Bar > Storage </summary>
@@ -240,18 +244,18 @@ After running the command, your GitHub repository should then be populated with 
     });
     ```
 
-## 4. Setup Deployed Database
+## 4. Use Deployed Database
 1. Create two new routes to get and update your deployed database respectfully. These routes will serve as way to grab and update our online repository. An example code snippet can be found below:
     ```typescript
     app.get('/data', async (req: Request, res: Response) => {
-      await database.hgetall('data:forum');
-      res.status(200).json({});
+      const data = await database.hgetall('data:forum');
+      res.status(200).json({ data });
     });
 
     app.put('/data', async (req: Request, res: Response) => {
       const { data } = req.body;
       await database.hset("data:forum", { data });
-      return res.status(200).json(data);
+      return res.status(200).json({});
     });
     ```
     And with that, we can now set and grab our data from an online database using Vercel KV. 
