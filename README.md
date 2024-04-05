@@ -1,14 +1,16 @@
-# Lab09 Deploy
+# Lab10 Deploy
 
 [TOC]
 
 # Due Date
 
-Week 10 Tuesday 5:00pm [Sydney Local Time](https://www.timeanddate.com/worldclock/australia/sydney).
+Week 13 Monday 5:00pm [Sydney Local Time](https://www.timeanddate.com/worldclock/australia/sydney).
+
+This is last day I can officially make things due. However, I will accept all submissions until Friday.
 
 # Note
 
-1. We'll be using a new [`lab09_forum`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=COMP1531/23T3/students/_/lab09_forum) repository to demonstrate deployment. This is simply a stripped down solution for `lab05_forum` with persistence, that allows us to assess a very basic implementation of the following routes:
+1. We'll be using a new [`lab10_forum`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=DPST1093/24T1/students/_/lab10_forum) repository to demonstrate deployment. This is simply a stripped down solution for `lab05_06_forum` with persistence, that allows us to assess a very basic implementation of the following routes:
     - root (`/`), 
     - echo (`/echo/echo`), 
     - post create (`/post/create`), 
@@ -17,7 +19,7 @@ Week 10 Tuesday 5:00pm [Sydney Local Time](https://www.timeanddate.com/worldcloc
 
 2. Although it is not a requirement that you deploy to Vercel in this lab, we recommend doing so as you will receive the most support from our staff this way.
 
-3. Please read the lab instructions regarding the [submission process](#testing-and-submitting-your-deployed_url) carefully. While most of the work is done in lab09_forum, **you will still need to clone lab09_deploy to modify and submit the [src/deploy.ts](src/deploy.ts) file!**
+3. Please read the lab instructions regarding the [submission process](#testing-and-submitting-your-deployed_url) carefully. While most of the work is done in lab10_forum, **you will still need to clone lab10_deploy to modify and submit the [src/deploy.ts](src/deploy.ts) file!**
 
 # Background
 
@@ -43,7 +45,7 @@ In this lab, you will expose your backend server application to the outside worl
 
 1. Use `git` to `add`, `commit` and `push` your [package.json](package.json) and [package-lock.json](package-lock.json).
 
-1. That's it :). This repository (`lab09_deploy`) is **only for submitting your `DEPLOYED_URL` and sanity-checking with the given tests and pipeline**. Most of the work (i.e. the deployment process) **should be done in your `lab09_forum` repository**.
+1. That's it :). This repository (`lab10_deploy`) is **only for submitting your `DEPLOYED_URL` and sanity-checking with the given tests and pipeline**. Most of the work (i.e. the deployment process) **should be done in your `lab10_forum` repository**.
 
 # Task 
 
@@ -65,8 +67,8 @@ Make sure to also read the tips given by Vercel as you progress through the lab.
 
 ## 1. Duplicate your repository to GitHub
 
-1. Clone your `lab09_forum` repository onto your machine. 
-1. Open your terminal and navigate to the `lab09_forum` folder.
+1. Clone your `lab10_forum` repository onto your machine. 
+1. Open your terminal and navigate to the `lab10_forum` folder.
 2. Create a new branch to represent the deployed version of your server, e.g. `deploy_forum`.
 3. In a seperate window, log in to your GitHub account and select **New repository**. 
     <details close>
@@ -93,7 +95,7 @@ $ git push deploy
 ```
 After running the command, your GitHub repository should then be populated with the code from your backend.
 
-Getting a "`git@github.com: Permission denied (publickey)` or similar access rights error? You'll need to add your SSH-Key to Github! Just like we did for Gitlab in [`lab01_git`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=COMP1531/23T3/students/_/lab01_git#adding-your-ed25519-ssh-key-to-gitlab). See instructions below, and then attempt to push again. 
+Getting a "`git@github.com: Permission denied (publickey)` or similar access rights error? You'll need to add your SSH-Key to Github! Just like we did for Gitlab in [`lab01_git`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=DPST1093/24T1/students/_/lab01_git#adding-your-ed25519-ssh-key-to-gitlab). See instructions below, and then attempt to push again. 
 - Generate a new SSH Key (optional): https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 - Add SSH key to Github: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
@@ -102,7 +104,7 @@ Getting a "`git@github.com: Permission denied (publickey)` or similar access rig
 ## 2. Deploy Server using Vercel
 *[Vercel](https://en.wikipedia.org/wiki/Vercel) is a cloud platform as a service company. Vercel architecture is built around [composability](https://en.wikipedia.org/wiki/Composability).*
 
-1. In your `lab09_forum` repo, install the [vercel](https://www.npmjs.com/package/vercel) package
+1. In your `lab10_forum` repo, install the [vercel](https://www.npmjs.com/package/vercel) package
     ```shell
     $ npm install vercel
     ```
@@ -333,7 +335,7 @@ Getting a "`git@github.com: Permission denied (publickey)` or similar access rig
 
 ## Testing and Submitting your DEPLOYED_URL
 
-To submit your deployed url, `cd` back into the `lab09_deploy` repository.
+To submit your deployed url, `cd` back into the `lab10_deploy` repository.
 
 1. Open [src/deploy.ts](src/deploy.ts) and modify the `DEPLOYED_URL` to your newly deployed site, e.g. https://z1234444-anything-you-want.vercel.app. 
   
