@@ -10,7 +10,7 @@ This is last day I can officially make things due. However, I will accept all su
 
 # Note
 
-1. We'll be using a new [`lab10_forum`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=DPST1093/24T1/students/_/lab10_forum) repository to demonstrate deployment. This is simply a stripped down solution for `lab05_06_forum` with persistence, that allows us to assess a very basic implementation of the following routes:
+1. We'll be using a new [`lab10_forum`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=DPST1093/24T2/students/_/lab10_forum) repository to demonstrate deployment. This is simply a stripped down solution for `lab05_06_forum` with persistence, that allows us to assess a very basic implementation of the following routes:
     - root (`/`), 
     - echo (`/echo/echo`), 
     - post create (`/post/create`), 
@@ -29,7 +29,7 @@ Deploy deploy deploy 🚀!
 
 While having our forum application working locally is fun and all, there's no point if you can't show it off to everyone else 😎!
 
-In this lab, you will expose your backend server application to the outside world via serverless functions and using databases. You can use it to chat with your friends, host secret parties or plot a coup d'etat against COMP1531 staff - the possibilities are endless!
+In this lab, you will expose your backend server application to the outside world via serverless functions and using databases. You can use it to chat with your friends, host secret parties or plot a coup d'etat against DPST1093 staff - the possibilities are endless!
 
 ## Getting Started
 
@@ -95,7 +95,7 @@ $ git push deploy
 ```
 After running the command, your GitHub repository should then be populated with the code from your backend.
 
-Getting a "`git@github.com: Permission denied (publickey)` or similar access rights error? You'll need to add your SSH-Key to Github! Just like we did for Gitlab in [`lab01_git`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=DPST1093/24T1/students/_/lab01_git#adding-your-ed25519-ssh-key-to-gitlab). See instructions below, and then attempt to push again. 
+Getting a "`git@github.com: Permission denied (publickey)` or similar access rights error? You'll need to add your SSH-Key to Github! Just like we did for Gitlab in [`lab01_git`](https://cgi.cse.unsw.edu.au/~cs1531/redirect/?path=DPST1093/24T2/students/_/lab01_git#adding-your-ed25519-ssh-key-to-gitlab). See instructions below, and then attempt to push again. 
 - Generate a new SSH Key (optional): https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 - Add SSH key to Github: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
