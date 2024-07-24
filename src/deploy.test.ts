@@ -1,11 +1,10 @@
-import request, { HttpVerb, Response } from 'sync-request-curl';
+import request, { HttpVerb, Response } from 'sync-request';
 import { DEPLOYED_URL } from './deploy';
 
 test('Remove this test and uncomment the tests below', () => {
   expect(1 + 1).toEqual(2);
 });
 
-/* // REMOVE ME
 
 // ========================================================================= //
 // Helpers
@@ -24,7 +23,7 @@ const parseResponse = (res: Response, path: string) => {
   } catch (e: any) {
     caughtError = e.message;
   }
-  
+
   const ret = {
     testName: expect.getState().currentTestName,
     returnedBody: body,
@@ -108,14 +107,13 @@ test('Writing/Reading Database', () => {
   expect(post).toStrictEqual({ postId: expect.any(Number) });
   expect(postsList()).toStrictEqual({
     posts: [
-      { 
-        postId: post.postId, 
-        sender: 'Mat', 
-        title: 'Turtles', 
+      {
+        postId: post.postId,
+        sender: 'Mat',
+        title: 'Turtles',
         timeSent: expect.any(Number)
       }
     ]
   });
 });
 
-*/ // REMOVE ME
