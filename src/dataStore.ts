@@ -1,5 +1,6 @@
 import fs from 'fs';
-const dataPath = 'src/store.json';
+const rootDir = process.cwd();
+const dataPath = `${rootDir}/src/store.json`;
 
 /// /////////////////////////////////
 /// ///////////setUser//////////////
