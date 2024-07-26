@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import fs from "fs";
 
 const app = express();
 const port = 3000;
@@ -52,3 +53,7 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+import {getData} from "./dataStore";
+let data = getData();
+console.log(data);

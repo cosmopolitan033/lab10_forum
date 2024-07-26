@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "email": "1245678@gmail.com",
+      "password": "10e163d81c2aad591bdf3a70ed8b7b31db88b7c7440173bead43db5794b5d653",
+      "nameFirst": "Jack",
+      "nameLast": "Wang",
+      "name": "Jack Wang",
+      "authUserId": 1,
+      "HistoryPassword": [
+        "10e163d81c2aad591bdf3a70ed8b7b31db88b7c7440173bead43db5794b5d653"
+      ],
+      "numFailedPasswordsSinceLastLogin": 0,
+      "numSuccessfulLogins": 2
+    }
+  ],
+  "quizzes": [],
+  "sessions": [
+    {
+      "sessionId": 1,
+      "authUserId": 1,
+      "token": "73322"
+    },
+    {
+      "sessionId": 2,
+      "authUserId": 1,
+      "token": "54420"
+    }
+  ],
+  "authUserId_count": 1,
+  "QuizId_count": 0,
+  "questionId_count": 0,
+  "sessionId_count": 2,
+  "quizSession": [],
+  "quizSessionId_count": 0,
+  "playerId_count": 0,
+  "answerId_count": 0
+}
